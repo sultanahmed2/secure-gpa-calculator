@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'"
+    >
+    <title>حاسبة المعدل الآمنة</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="card">
+      <header>
+        <p class="eyebrow">مشروع نهائي</p>
+        <h1>حاسبة المعدل</h1>
+        <p>أضف درجات موادك وساعاتها، وسنحسب المعدل الموزون.</p>
+      </header>
+
+      <form id="course-form" novalidate>
+        <label for="name">اسم المادة</label>
+        <input id="name" name="name" maxlength="60" placeholder="مثال: الرياضيات">
+
+        <div class="fields">
+          <div>
+            <label for="grade">الدرجة من 100</label>
+            <input id="grade" name="grade" type="number" min="0" max="100" step="0.01" required>
+          </div>
+          <div>
+            <label for="credits">عدد الساعات</label>
+            <input id="credits" name="credits" type="number" min="1" max="10" step="1" required>
+          </div>
+        </div>
+
+        <button class="primary" type="submit">إضافة المادة</button>
+      </form>
+
+      <section aria-labelledby="courses-title">
+        <h2 id="courses-title">المواد المضافة</h2>
+        <ul id="courses"></ul>
+      </section>
+
+      <button id="calculate" class="calculate" type="button">احسب المعدل</button>
+      <output id="result" aria-live="polite">أضف مادة للبدء.</output>
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
